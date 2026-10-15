@@ -391,7 +391,9 @@ function openEditor(post) {
 // ---------- 시작 ----------
 (async function init() {
   try {
-    const r = await fetch(`${FILE}?v=${Date.now()}`, { cache: "no-store" });
+    // 파일을 더블클릭해 열면(file://) 브라우저가 옆 파일 읽기를 막으므로, 그때는 배포된 사이트의 글을 가져옴
+    const base = location.protocol === "file:" ? "https://chunkyung02-boop.github.io/dev-archive/" : "";
+    const r = await fetch(`${base}${FILE}?v=${Date.now()}`, { cache: "no-store" });
     site = await r.json();
   } catch (e) {
     $("#main").innerHTML = `<p class="empty wrap" style="padding-top:140px">글을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</p>`;
