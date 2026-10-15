@@ -94,3 +94,38 @@ ol.al-list { list-style: decimal; }
 @media (prefers-reduced-motion: reduce) {
   .arc-body { transition: none; }
 }
+
+/* ---------- 관리자 모드 · 글쓰기 ---------- */
+.btn { background: transparent; border: 1px solid var(--line); color: var(--text); padding: 8px 16px; border-radius: 6px; font: inherit; font-size: .85rem; cursor: pointer; transition: border-color .2s, background .2s; }
+.btn:hover { border-color: var(--text); }
+.btn.sm { padding: 4px 10px; font-size: .78rem; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #14101f; font-weight: 600; }
+.btn.danger { color: #ff9592; }
+.admin-bar { display: flex; align-items: center; gap: 16px; margin-top: 28px; font-size: .8rem; color: var(--muted); }
+.admin-row { margin-bottom: 18px; }
+.arc-meta em.draft { border-color: #ffca16; color: #ffca16; }
+.empty { color: var(--muted); padding: 60px 0; }
+.modal { position: fixed; inset: 0; z-index: 50; background: rgba(5,4,10,.78); overflow-y: auto; display: flex; justify-content: center; padding: 40px 16px; backdrop-filter: blur(4px); }
+.modal-box { width: 100%; max-width: 520px; height: max-content; background: #14111f; border: 1px solid var(--line); border-radius: 14px; padding: 28px; }
+.modal-box.wide { max-width: 860px; }
+.modal-box h2 { font-size: 1.15rem; font-weight: 500; margin-bottom: 18px; }
+.modal-box label { display: block; font-size: .78rem; color: var(--muted); margin-top: 14px; }
+.modal-box input, .modal-box select, .modal-box textarea { display: block; width: 100%; margin-top: 6px; padding: 10px 12px; background: #0b0a12; color: var(--text); border: 1px solid var(--line); border-radius: 6px; font: inherit; font-size: .92rem; }
+.modal-box input:focus, .modal-box select:focus, .modal-box textarea:focus { outline: none; border-color: var(--accent); }
+.modal-box textarea { min-height: 380px; font-family: ui-monospace, Consolas, monospace; font-size: .85rem; line-height: 1.6; resize: vertical; margin-top: 10px; }
+.modal-box .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.modal-box .grid label:first-child { grid-column: 1 / -1; }
+.modal-box .chk { display: flex; align-items: center; gap: 8px; }
+.modal-box .chk input { width: auto; margin: 0; }
+.snips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 18px; font-size: .78rem; color: var(--muted); }
+.preview { margin-top: 10px; border: 1px solid var(--line-soft); border-radius: 8px; padding: 6px 18px 18px; max-height: 60vh; overflow: auto; }
+.m-actions { display: flex; gap: 10px; align-items: center; margin-top: 22px; }
+.m-actions .sp { flex: 1; }
+.hint, .steps { font-size: .85rem; color: var(--muted); }
+.steps { margin: 14px 0 16px 1.2em; display: grid; gap: 6px; list-style: decimal; }
+.steps a { color: var(--accent); }
+.err { margin-top: 12px; font-size: .82rem; color: #ffca16; min-height: 1.2em; }
+#toast { position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 20px); background: #1e1a2e; border: 1px solid var(--line); padding: 12px 20px; border-radius: 999px; font-size: .88rem; opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 60; }
+#toast.on { opacity: 1; transform: translate(-50%, 0); }
+.af img, .ap img, .al-list img, .arc-body img { max-width: 100%; border-radius: 8px; margin: 6px 0; }
+#footer a#adminLink { opacity: .6; }
